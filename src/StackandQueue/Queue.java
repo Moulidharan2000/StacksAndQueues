@@ -20,6 +20,17 @@ public class Queue {
 		return (size == 0);
 	}
 	
+	public int dequeue() {
+		int data = front.data;
+		front = front.next;
+		if(Empty()) {
+			back = null;
+		}
+		size--;
+		System.out.println(data+" Removed from the Queue");
+		return data;
+	}
+	
 	public void enqueue(int data) {
 		Node oldRear = back;
 		back = new Node();
@@ -39,10 +50,14 @@ public class Queue {
 	public static void main(String[] args) {
 		
 		Queue queue = new Queue();
-		
 		queue.enqueue(56);
+		queue.dequeue();
 		queue.enqueue(30);
+		queue.dequeue();
 		queue.enqueue(70);
+		queue.dequeue();
+		
+		System.out.println("\nQueue is Empty");
 		
 	}
 
