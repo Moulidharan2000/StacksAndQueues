@@ -21,6 +21,32 @@ public class Stacks {
 		top = node;
 	}
 	
+	public boolean isEmpty() {
+		return top == null;
+	}
+	
+	public int peak() {
+		
+		if(isEmpty()) {
+			
+			return top.data;
+		}
+		else {
+			System.out.println("Stack is Empty\n");
+		}
+		return -1;	
+	}
+	
+	public void pop() {
+		
+		while(top != null) {
+			System.out.println("Peak : "+peak()+"\n");
+			top = top.next;
+			System.out.println("One Item Removed from Stack...\n");
+		}
+		System.out.println("Now Stack is Empty...\n");
+	}
+	
 	public void printStack() {
 		Node node = top;
 		
@@ -36,6 +62,8 @@ public class Stacks {
 		stackoperation.push(70);
 		stackoperation.push(30);
 		stackoperation.push(56);
+		stackoperation.printStack();
+		stackoperation.pop();
 		stackoperation.printStack();
 	}
 
